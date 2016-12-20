@@ -7,8 +7,35 @@ User = settings.AUTH_USER_MODEL # 'auth.User'
 
 
 class Car(models.Model):
-    user    = models.ForeignKey(User)
+    user    = models.ForeignKey(User) 
     name    = models.CharField(max_length=120)
 
     def __str__(self): # __unicode__
         return self.name
+
+
+# ForeignKey = ManyToOneField() #Many Users can have any car, car can only have 1 user
+
+# car_obj = Car.objects.first()
+# car_obj.user
+
+# User = car_obj.user.__class__
+
+# abc = User.objects.all().last() # filter querysets
+
+# user_cars = abc.car_set.all() 
+
+# user_cars_qs = Car.objects.filter(user=abc)
+
+
+# class Comment(models.Model):
+#     user    = models.ForeignKey(User) 
+#     content = models.CharField(max_length=120)
+
+
+# comments = abc.comment_set.all()
+# comments_qs = Comment.objects.filter(user=abc)
+
+
+
+

@@ -7,11 +7,32 @@ User = settings.AUTH_USER_MODEL # 'auth.User'
 
 
 class Car(models.Model):
-    user    = models.ForeignKey(User) 
+    #user    = models.ForeignKey(User) 
+    drivers = models.ManyToManyField(User)
     name    = models.CharField(max_length=120)
 
     def __str__(self): # __unicode__
         return self.name
+
+
+
+# car_1 = Car.objects.first()
+# user_qs = car_1.drivers.all()  # returns queryset of users
+
+# cfe = user_qs.first()
+# cfe.car_set.all()
+
+
+# Car.objects.filter(drivers=cfe)
+
+# Car.objects.filter(drivers__in= user_qs )
+
+
+
+
+
+
+
 
 
 # ForeignKey = ManyToOneField() #Many Users can have any car, car can only have 1 user

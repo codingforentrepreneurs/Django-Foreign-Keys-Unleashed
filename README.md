@@ -1,3 +1,5 @@
+![Django Foreign Keys Unleashed Logo](https://www.codingforentrepreneurs.com/projects/django-foreign-keys-unleashed)
+
 # Django Foreign Keys Unleashed
 
 Concepts behind creating relationships and associations with Django models using foreign keys.

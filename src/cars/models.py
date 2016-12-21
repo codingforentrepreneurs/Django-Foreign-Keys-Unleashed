@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.db import models
 
 # Create your models here.
@@ -6,9 +7,17 @@ from django.db import models
 User = settings.AUTH_USER_MODEL # 'auth.User'
 
 
+def set_delete_user(*args, **kwargs):
+    User = get_user_model()
+    return User.objects.get_or_create(username='deleted')[0] # get_or_create -> ( obj, true )
+
+
+
 class Car(models.Model):
-    first_owner = models.OneToOneField(User)
+    user    = models.ForeignKey(User, on_delete=models.SET(set_delete_user)) 
+    # first_owner = models.OneToOneField(User)
     # user    = models.ForeignKey(User) 
+    # passengers = models.ManyToManyField(User)
     # drivers = models.ManyToManyField(User)
     name    = models.CharField(max_length=120)
 

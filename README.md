@@ -6,6 +6,7 @@ Concepts behind creating relationships and associations with Django models using
 
 [Blank project](../../tree/c618a4f2451e5c34c9b1a9bf32a9dd566aba0795)
 
+[Foreign Key Concepts Image](./concepts.jpg)
 
 
 ### Lecture Code

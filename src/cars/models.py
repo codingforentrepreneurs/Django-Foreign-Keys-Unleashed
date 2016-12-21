@@ -7,8 +7,9 @@ User = settings.AUTH_USER_MODEL # 'auth.User'
 
 
 class Car(models.Model):
-    #user    = models.ForeignKey(User) 
-    drivers = models.ManyToManyField(User)
+    first_owner = models.OneToOneField(User)
+    # user    = models.ForeignKey(User) 
+    # drivers = models.ManyToManyField(User)
     name    = models.CharField(max_length=120)
 
     def __str__(self): # __unicode__

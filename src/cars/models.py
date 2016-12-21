@@ -2,6 +2,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db import models
 
+
 # Create your models here.
 
 User = settings.AUTH_USER_MODEL # 'auth.User'
@@ -11,10 +12,17 @@ def set_delete_user(*args, **kwargs):
     User = get_user_model()
     return User.objects.get_or_create(username='deleted')[0] # get_or_create -> ( obj, true )
 
+def limit_car_choices():
+    Q = models.Q
+    return Q(username__icontains='e') # | Q(username__icontains='c') 
 
 
 class Car(models.Model):
-    user    = models.ForeignKey(User, on_delete=models.SET(set_delete_user)) 
+    user    = models.ForeignKey(
+                User, 
+                on_delete   = models.SET(set_delete_user), 
+                limit_choices_to    = limit_car_choices,
+            ) 
     # first_owner = models.OneToOneField(User)
     # user    = models.ForeignKey(User) 
     # passengers = models.ManyToManyField(User)

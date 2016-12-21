@@ -1,4 +1,4 @@
-![Django Foreign Keys Unleashed Logo](https://www.codingforentrepreneurs.com/projects/django-foreign-keys-unleashed)
+![Django Foreign Keys Unleashed Logo](https://cfe-static.s3.amazonaws.com/media/django-foreign-keys-unleashed/images/django_foreign_keys_unleashed.png)
 
 # Django Foreign Keys Unleashed
 

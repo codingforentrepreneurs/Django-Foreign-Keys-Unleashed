@@ -23,6 +23,7 @@ class Car(models.Model):
                 on_delete   = models.SET(set_delete_user), 
                 limit_choices_to    = limit_car_choices,
             ) 
+    updated_by    = models.ForeignKey(User, related_name='updated_car_user', null=True, blank=True) 
     # first_owner = models.OneToOneField(User)
     # user    = models.ForeignKey(User) 
     # passengers = models.ManyToManyField(User)

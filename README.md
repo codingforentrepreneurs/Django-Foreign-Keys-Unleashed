@@ -24,3 +24,14 @@ Concepts behind creating relationships and associations with Django models using
 [7 - On Delete](../../tree/6219f881071678497f2135649228f6081b00d6d1)
 
 [8 - Limit Choices To](../../tree/c826e582c63cd44c0109db49e046cec9cd3ec5c4)
+
+[9 - Search & Change Foreign Key Field in Admin](../../tree/d2739a718ce4c887582eca6f2dc4ff856cf3e148)
+
+[10 - Save Request User to Model in Admin](../../tree/fd3a4e3bf43b6848d68f9918f906a5d33cb6bd60)
+
+[11 - Model Admin Methods for User Foreign Key](../../tree/651e945166330fe0bc6263a2bab42e188b87cc53)
+
+12 - Related Name in Foreign Key __no code changes__
+
+
+

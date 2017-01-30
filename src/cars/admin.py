@@ -22,5 +22,24 @@ class CarAdmin(admin.ModelAdmin):
             obj.updated_by = request.user
         obj.save()
 
+    # def get_queryset(self, request):
+    #     qs = super(CarAdmin, self).get_queryset(request)
+    #     if request.user.is_superuser: #request.user.is_staff
+    #         return qs
+    #     return qs.filter(user=request.user)
+
+    # def has_change_permission(self, request, obj=None):
+    #     """
+    #     means is staff (request.user.is_staff)
+    #     """
+    #     if not obj:
+    #         return True 
+    #     return obj.user == request.user or request.user.is_superuser
+
+    # def get_readonly_fields(self, request, *args, **kwargs):
+    #     if request.user.is_superuser:
+    #         return []
+    #     return ['user']
+
 
 admin.site.register(Car, CarAdmin)
